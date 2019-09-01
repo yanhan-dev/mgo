@@ -33,7 +33,7 @@ import (
 	"errors"
 	"fmt"
 	"mgo/bson"
-	"mgo/internal/scram"
+	"mgo/scram"
 	"sync"
 )
 

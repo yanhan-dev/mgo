@@ -4,11 +4,10 @@ import (
 	"bytes"
 	"encoding/base64"
 	"fmt"
+	"mgo/internal/json"
 	"strconv"
 	"strings"
 	"time"
-
-	"mgo/internal/json"
 )
 
 // UnmarshalJSON unmarshals a JSON value that may hold non-standard

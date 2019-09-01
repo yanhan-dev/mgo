@@ -4,6 +4,7 @@ package bson
 
 import (
 	"bytes"
+	"encoding/json"
 	"fmt"
 	"go/format"
 	"html/template"
@@ -11,7 +12,6 @@ import (
 	"log"
 	"path/filepath"
 	"strings"
-	"mgo/internal/json"
 )
 
 func main() {
