@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"encoding/base64"
 	"fmt"
-	"mgo/json"
+	"github.com/laoluan/mgo/internal/json"
 	"strconv"
 	"strings"
 	"time"

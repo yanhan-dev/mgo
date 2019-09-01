@@ -29,9 +29,9 @@ package mgo
 import (
 	"errors"
 	"fmt"
+	"github.com/laoluan/mgo/bson"
 	"net"
 	"sync"
-	"mgo/bson"
 	"time"
 )
 

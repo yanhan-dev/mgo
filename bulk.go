@@ -2,10 +2,9 @@ package mgo
 
 import (
 	"bytes"
+	"github.com/laoluan/mgo/bson"
 	"sort"
 	"sync"
-
-	"mgo/bson"
 )
 
 // Bulk represents an operation that can be prepared with several

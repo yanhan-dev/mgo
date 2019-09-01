@@ -3,7 +3,7 @@ package mgo
 import (
 	"errors"
 	"fmt"
-	"mgo/bson"
+	"github.com/laoluan/mgo/bson"
 	"reflect"
 	"sync"
 	"time"
