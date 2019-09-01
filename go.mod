@@ -1,4 +1,4 @@
-module github.com/laoluan/mgo/
+module github.com/laoluan/mgo
 
 go 1.12
 
