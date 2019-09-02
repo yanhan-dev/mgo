@@ -3011,7 +3011,42 @@ func (c *Collection) Insert(docs ...interface{}) error {
 //     http://www.mongodb.org/display/DOCS/Updating
 //     http://www.mongodb.org/display/DOCS/Atomic+Operations
 //
-func (c *Collection) Update(selector interface{}, update interface{}, af ...interface{}) error {
+func (c *Collection) Update(selector interface{}, update interface{}) error {
+	if selector == nil {
+		selector = bson.D{}
+	}
+	op := updateOp{
+		Collection:   c.FullName,
+		Selector:     selector,
+		Update:       update,
+	}
+	lerr, err := c.writeOp(&op, true)
+	if err == nil && lerr != nil && !lerr.UpdatedExisting {
+		return ErrNotFound
+	}
+	return err
+}
+
+// UpdateUseAf finds a single document matching the provided selector document
+// and modifies it according to the update document.
+// If the session is in safe mode (see SetSafe) a ErrNotFound error is
+// returned if a document isn't found, or a value of type *LastError
+// when some other error is detected.
+//
+// example:
+//		err := mon.Session.DB("dbName").C("collectionName").UpdateUseAf(
+//		bson.M{},
+//		bson.M{"$set": bson.M{"content.regs.$[reg].conf.$[con].name": "再次的成功了"}},
+//		[]bson.M{
+//			{"reg.name": "继电器1"},
+//			{"con.name": "真的成功了"},
+//		})
+// Relevant documentation:
+//
+//     http://www.mongodb.org/display/DOCS/Updating
+//     http://www.mongodb.org/display/DOCS/Atomic+Operations
+//
+func (c *Collection) UpdateUseAf(selector interface{}, update interface{}, af interface{}) error {
 	if selector == nil {
 		selector = bson.D{}
 	}
@@ -3054,13 +3089,51 @@ type ChangeInfo struct {
 // operation are returned in info or an error of type *LastError when
 // some problem is detected. It is not an error for the update to not be
 // applied on any documents because the selector doesn't match.
+// Relevant documentation:
+//
+//     http://www.mongodb.org/display/DOCS/Updating
+//     http://www.mongodb.org/display/DOCS/Atomic+Operations
+//
+func (c *Collection) UpdateAll(selector interface{}, update interface{}) (info *ChangeInfo, err error) {
+	if selector == nil {
+		selector = bson.D{}
+	}
+	op := updateOp{
+		Collection:   c.FullName,
+		Selector:     selector,
+		Update:       update,
+		Flags:        2,
+		Multi:        true,
+	}
+	lerr, err := c.writeOp(&op, true)
+	if err == nil && lerr != nil {
+		info = &ChangeInfo{Updated: lerr.modified, Matched: lerr.N}
+	}
+	return info, err
+}
+
+// UpdateAllUseAf finds all documents matching the provided selector document
+// and modifies them according to the update document.
+// If the session is in safe mode (see SetSafe) details of the executed
+// operation are returned in info or an error of type *LastError when
+// some problem is detected. It is not an error for the update to not be
+// applied on any documents because the selector doesn't match.
+//
+// example:
+//		err := mon.Session.DB("dbName").C("collectionName").UpdateAllUseAf(
+//		bson.M{},
+//		bson.M{"$set": bson.M{"content.regs.$[reg].conf.$[con].name": "再次的成功了"}},
+//		[]bson.M{
+//			{"reg.name": "继电器1"},
+//			{"con.name": "真的成功了"},
+//		})
 //
 // Relevant documentation:
 //
 //     http://www.mongodb.org/display/DOCS/Updating
 //     http://www.mongodb.org/display/DOCS/Atomic+Operations
 //
-func (c *Collection) UpdateAll(selector interface{}, update interface{}, af ...interface{}) (info *ChangeInfo, err error) {
+func (c *Collection) UpdateAllUseAf(selector interface{}, update interface{}, af interface{}) (info *ChangeInfo, err error) {
 	if selector == nil {
 		selector = bson.D{}
 	}
