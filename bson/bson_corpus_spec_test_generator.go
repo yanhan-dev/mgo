@@ -161,7 +161,7 @@ import (
 	"time"
 
 	. "gopkg.in/check.v1"
-    "mgo/bson"
+    "github.com/laoluan/mgo/bson"
 )
 
 func testValid(c *C, in []byte, expected []byte, result interface{}) {

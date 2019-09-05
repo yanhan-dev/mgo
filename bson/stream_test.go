@@ -2,8 +2,7 @@ package bson_test
 
 import (
 	"bytes"
-
-	"mgo/bson"
+	"github.com/laoluan/mgo/bson"
 )
 
 var invalidSizeDocuments = [][]byte{

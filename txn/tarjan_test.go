@@ -2,8 +2,7 @@ package txn
 
 import (
 	"fmt"
-
-	"mgo/bson"
+	"github.com/laoluan/mgo/bson"
 )
 
 type TarjanSuite struct{}
