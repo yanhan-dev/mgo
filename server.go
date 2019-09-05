@@ -28,7 +28,7 @@ package mgo
 
 import (
 	"errors"
-	"mgo/bson"
+	"github.com/laoluan/mgo/bson"
 	"net"
 	"sort"
 	"sync"

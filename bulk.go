@@ -2,7 +2,7 @@ package mgo
 
 import (
 	"bytes"
-	"mgo/bson"
+	"github.com/laoluan/mgo/bson"
 	"sort"
 	"sync"
 )

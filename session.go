@@ -35,7 +35,7 @@ import (
 	"encoding/hex"
 	"errors"
 	"fmt"
-	"mgo/bson"
+	"github.com/laoluan/mgo/bson"
 	"math"
 	"net"
 	"net/url"

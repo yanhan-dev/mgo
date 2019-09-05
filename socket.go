@@ -29,7 +29,7 @@ package mgo
 import (
 	"errors"
 	"fmt"
-	"mgo/bson"
+	"github.com/laoluan/mgo/bson"
 	"net"
 	"sync"
 	"time"
