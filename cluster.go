@@ -29,7 +29,7 @@ package mgo
 import (
 	"errors"
 	"fmt"
-	"github.com/laoluan/mgo/bson"
+	"mgo/bson"
 	"net"
 	"runtime"
 	"strconv"
