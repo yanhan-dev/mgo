@@ -32,8 +32,8 @@ import (
 	"encoding/hex"
 	"errors"
 	"fmt"
-	"mgo/bson"
-	"mgo/internal/scram"
+	"github.com/laoluan/mgo/bson"
+	"github.com/laoluan/mgo/internal/scram"
 	"sync"
 )
 
