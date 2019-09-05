@@ -1,7 +1,7 @@
 package bson_test
 
 import (
-	"mgo/bson"
+	"github.com/laoluan/mgo/bson"
 )
 
 type mixedTagging struct {

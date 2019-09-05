@@ -4,9 +4,8 @@ package bson_test
 
 import (
 	"encoding/hex"
+	"github.com/laoluan/mgo/bson"
 	"time"
-
-	"mgo/bson"
 )
 
 func testValid(c *C, in []byte, expected []byte, result interface{}) {

@@ -30,10 +30,9 @@ import (
 	"encoding/hex"
 	"encoding/json"
 	"fmt"
+	"github.com/laoluan/mgo/bson"
 	"regexp"
 	"strings"
-
-	"mgo/bson"
 )
 
 // --------------------------------------------------------------------------

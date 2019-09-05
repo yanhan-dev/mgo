@@ -17,9 +17,8 @@ package sasl
 //
 // sasl_callback_t *mgo_sasl_callbacks(const char *username, const char *password);
 //
-import "C"
-
 import (
+	"C"
 	"fmt"
 	"strings"
 	"sync"

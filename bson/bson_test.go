@@ -34,13 +34,13 @@ import (
 	"errors"
 	"fmt"
 	"github.com/laoluan/mgo/bson"
+	. "gopkg.in/check.v1"
 	"math/rand"
 	"net/url"
 	"reflect"
 	"strings"
 	"testing"
 	"time"
-	. "gopkg.in/check.v1"
 )
 
 func TestAll(t *testing.T) {
