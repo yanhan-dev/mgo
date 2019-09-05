@@ -2,10 +2,8 @@ package txn
 
 import (
 	"fmt"
-
-	"mgo"
-
-	"mgo/bson"
+	"github.com/laoluan/mgo"
+	"github.com/laoluan/mgo/bson"
 )
 
 func flush(r *Runner, t *transaction) error {

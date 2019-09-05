@@ -1,7 +1,8 @@
 package mgo_test
 
 import (
-	"mgo/bson"
+	"github.com/laoluan/mgo"
+	"github.com/laoluan/mgo/bson"
 )
 
 type updateDesc struct {

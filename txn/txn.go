@@ -7,19 +7,16 @@
 package txn
 
 import (
+	crand "crypto/rand"
 	"encoding/binary"
 	"fmt"
+	"github.com/laoluan/mgo"
+	"github.com/laoluan/mgo/bson"
+	mrand "math/rand"
 	"reflect"
 	"sort"
 	"strings"
 	"sync"
-
-	"mgo"
-
-	"mgo/bson"
-
-	crand "crypto/rand"
-	mrand "math/rand"
 )
 
 type state int

@@ -3,15 +3,14 @@ package dbtest
 import (
 	"bytes"
 	"fmt"
+	"github.com/laoluan/mgo"
+	"gopkg.in/tomb.v2"
 	"net"
 	"os"
 	"os/exec"
 	"runtime"
 	"strconv"
 	"time"
-
-	mgo "mgo"
-	"gopkg.in/tomb.v2"
 )
 
 // DBServer controls a MongoDB server process to be used within test suites.

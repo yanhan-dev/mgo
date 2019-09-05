@@ -1,14 +1,12 @@
 package dbtest_test
 
 import (
+	"github.com/laoluan/mgo"
+	"github.com/laoluan/mgo/dbtest"
+	. "gopkg.in/check.v1"
 	"os"
 	"testing"
 	"time"
-
-	mgo "mgo"
-	. "gopkg.in/check.v1"
-
-	"mgo/dbtest"
 )
 
 type M map[string]interface{}

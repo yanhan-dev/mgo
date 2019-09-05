@@ -33,15 +33,13 @@ import (
 	"encoding/xml"
 	"errors"
 	"fmt"
+	"github.com/laoluan/mgo/bson"
 	"math/rand"
 	"net/url"
 	"reflect"
 	"strings"
 	"testing"
 	"time"
-
-	"mgo/bson"
-
 	. "gopkg.in/check.v1"
 )
 

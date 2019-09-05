@@ -27,8 +27,9 @@
 package mgo_test
 
 import (
+	"github.com/laoluan/mgo"
+	"github.com/laoluan/mgo/bson"
 	"io"
-	"mgo"
 	"os"
 	"time"
 )

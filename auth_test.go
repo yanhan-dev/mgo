@@ -31,6 +31,7 @@ import (
 	"crypto/x509"
 	"flag"
 	"fmt"
+	"github.com/laoluan/mgo"
 	"io/ioutil"
 	"net"
 	"net/url"
@@ -38,8 +39,6 @@ import (
 	"runtime"
 	"sync"
 	"time"
-
-	"mgo"
 )
 
 func (s *S) TestAuthLoginDatabase(c *C) {

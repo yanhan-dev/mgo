@@ -3,10 +3,9 @@ package mgo
 import (
 	"crypto/x509/pkix"
 	"encoding/asn1"
+	"github.com/laoluan/mgo/bson"
 	"testing"
 	"time"
-
-	"mgo/bson"
 )
 
 type S struct{}

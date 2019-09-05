@@ -3,10 +3,9 @@ package txn
 import (
 	"bytes"
 	"fmt"
+	"github.com/laoluan/mgo/bson"
 	"sort"
 	"sync/atomic"
-
-	"mgo/bson"
 )
 
 var (

@@ -389,7 +389,7 @@ func TestStringBytes(t *testing.T) {
 		esBytes := &encodeState{}
 		esBytes.stringBytes([]byte(s), escapeHTML)
 
-		enc := Buffer.String()
+		enc :=  Buffer.String()
 		encBytes := Buffer.String()
 		if enc != encBytes {
 			i := 0

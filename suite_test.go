@@ -31,15 +31,14 @@ import (
 	"errors"
 	"flag"
 	"fmt"
+	"github.com/laoluan/mgo"
+	"github.com/laoluan/mgo/bson"
 	"net"
 	"os/exec"
 	"runtime"
 	"strconv"
 	"testing"
 	"time"
-
-	"mgo"
-	"mgo/bson"
 )
 
 var fast = flag.Bool("fast", false, "Skip slow tests")

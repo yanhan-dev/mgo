@@ -29,8 +29,9 @@ package mgo_test
 import (
 	"errors"
 	"fmt"
+	"github.com/laoluan/mgo"
+	"github.com/laoluan/mgo/bson"
 	"io"
-	"mgo"
 	"net"
 	"strings"
 	"sync"

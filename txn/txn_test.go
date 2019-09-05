@@ -3,14 +3,14 @@ package txn_test
 import (
 	"flag"
 	"fmt"
+	"github.com/laoluan/mgo"
+	"github.com/laoluan/mgo/bson"
+	"github.com/laoluan/mgo/dbtest"
+	"github.com/laoluan/mgo/txn"
 	"sync"
 	"testing"
 	"time"
 
-	mgo "mgo"
-	"mgo/bson"
-	"mgo/dbtest"
-	"mgo/txn"
 	. "gopkg.in/check.v1"
 )
 

@@ -29,6 +29,7 @@ package mgo_test
 import (
 	"flag"
 	"fmt"
+	"github.com/laoluan/mgo"
 	"math"
 	"math/rand"
 	"os"
@@ -39,9 +40,6 @@ import (
 	"sync"
 	"testing"
 	"time"
-
-	"mgo"
-	"mgo/bson"
 )
 
 func (s *S) TestRunString(c *C) {

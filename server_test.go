@@ -27,7 +27,7 @@
 package mgo_test
 
 import (
-	"mgo"
+	"github.com/laoluan/mgo"
 	"time"
 )
 

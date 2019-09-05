@@ -27,7 +27,7 @@
 package mgo_test
 
 import (
-	"mgo"
+	"github.com/laoluan/mgo"
 )
 
 func (s *S) TestBulkInsert(c *C) {

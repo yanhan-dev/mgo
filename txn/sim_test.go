@@ -2,13 +2,12 @@ package txn_test
 
 import (
 	"flag"
+	"github.com/laoluan/mgo"
+	"github.com/laoluan/mgo/bson"
+	"github.com/laoluan/mgo/dbtest"
+	"github.com/laoluan/mgo/txn"
 	"math/rand"
 	"time"
-
-	"mgo"
-	"mgo/bson"
-	"mgo/dbtest"
-	"mgo/txn"
 )
 
 var (
